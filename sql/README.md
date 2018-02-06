@@ -93,6 +93,8 @@ Awesome, let's get your [System Setup](system.markdown) and move onto our materi
 * [Data](data.markdown)
 * [Injection](injection.markdown)
 * [Joins](joins.markdown)
+* [Performance](performance.markdown)
+* [Reporting](reporting.markdown)
 
 ## Exercises
 
