@@ -13,7 +13,7 @@ SQL Injection is the "injection" of unexpected or malicious code into SQL statem
 * Worst Case: this can be exploited to copy or destroy your database
 * Every Case: it's bad. Anytime you hear SQL Injection, just know that it's something to avoid.
 
-![Little Bobby Tables](../assets/little-bobby-tables.png "Little Bobby Tables")
+![Little Bobby Tables](https://imgs.xkcd.com/comics/exploits_of_a_mom.png "Little Bobby Tables")
 
 ## Malicious
 
