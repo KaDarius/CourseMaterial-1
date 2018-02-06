@@ -19,6 +19,7 @@ As we go into details of any programming tool, you'll find that documentation is
 * [W3 Schools](https://www.w3schools.com/sql/default.asp)
 * [Wikipedia](https://en.wikipedia.org/wiki/SQL)
 * [SQL Joins](https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins)
+* [SQL Interview Questions](https://www.technojobs.co.uk/info/interview-tips/sql-interview-answers.phtml)
 
 ## Introduction
 

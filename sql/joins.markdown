@@ -173,4 +173,4 @@ WHERE Customers.CustomerID IS NULL OR Orders.CustomerID IS NULL;
 **Note:** Although Full Outer Excluding Join is available to you, there are very few cases where this Join will be required.
 
 **Previous:** [Injection](injection.markdown) |
-**Next:** []()
+**Next:** [Performance](performance.markdown)
