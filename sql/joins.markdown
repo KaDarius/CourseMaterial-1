@@ -97,7 +97,7 @@ FULL OUTER JOIN tableB ON tableA.column_name = tableB.column_name;
 -- where the Orders.CustomerID matches the Customers.CustomerID
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
-FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName;
 ```
 
@@ -149,7 +149,28 @@ WHERE Orders.CustomerID IS NULL;
 
 ## FULL OUTER EXCLUDING JOIN
 
+The `FULL OUTER EXCLUDING JOIN` statement in SQL gets all the records from both the left and right tables where a match does not occur in either table. The result set looks like this:
+
 ![SQL FULL OUTER EXCLUDING JOIN](../assets/sql-full-outer-excluding-join.png "SQL FULL OUTER EXCLUDING JOIN")
+
+The `FULL OUTER EXCLUDING JOIN` statement follows this syntax:
+
+```sql
+SELECT column_name(s)
+FROM tableA
+FULL OUTER JOIN tableB
+ON tableA.column_name = tableB.column_name
+WHERE tableA.column_name IS NULL OR tableB.column_name IS NULL;
+
+-- Returns all customer names
+-- where a match doesn't occur in either Orders or Customers tables
+SELECT Customers.CustomerName
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+WHERE Customers.CustomerID IS NULL OR Orders.CustomerID IS NULL;
+```
+
+**Note:** Although Full Outer Excluding Join is available to you, there are very few cases where this Join will be required.
 
 **Previous:** [Injection](injection.markdown) |
 **Next:** []()
