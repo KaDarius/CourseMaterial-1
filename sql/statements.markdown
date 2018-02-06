@@ -63,12 +63,12 @@ WHERE condition;
 
 /* Update all records from our phone_book table
 with on the provided key, value pairs where the id equals 42 */
-UPDATE phone_book SET Name = 'John Doe', Phone = '205-123-4567' WHERE id = 42
+UPDATE phone_book SET Name = 'John Doe', Phone = '205-123-4567' WHERE id = 42;
 
 
 /* Update all records from our phone_book table
 with on the provided key, value pairs where the Name equals "Cody Winton" */
-UPDATE phone_book SET Name = 'John Doe', Phone = '205-123-4567' WHERE Name = 'Cody Winton'
+UPDATE phone_book SET Name = 'John Doe', Phone = '205-123-4567' WHERE Name = 'Cody Winton';
 ```
 
 **Note:** Without the `WHERE` clause in the `UPDATE` statement, every record in our table will be updated based on the key, value pairs provided.
@@ -82,10 +82,10 @@ DELETE FROM table_name
 WHERE condition;
 
 -- Delete all records from our phone_book table where the id equals 42
-DELETE FROM phone_book WHERE id = 42
+DELETE FROM phone_book WHERE id = 42;
 
 -- Delete all records from our phone_book table where the Name equals "Cody Winton"
-DELETE FROM phone_book WHERE Name = 'Cody Winton'
+DELETE FROM phone_book WHERE Name = 'Cody Winton';
 ```
 
 **Note:** Without the `WHERE` clause in the `DELETE` statement, every record in our table will be deleted.
