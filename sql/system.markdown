@@ -29,4 +29,4 @@ Next, download [AdventureWorks database](https://sourceforge.net/projects/awmysq
 
 ## SQL Material
 
-Now that you're all setup, let's dive into our [SQL Introduction](introduction.markdown).
+Now that you're all setup, let's dive into our [SQL Statements](statements.markdown).

@@ -90,5 +90,5 @@ DELETE FROM phone_book WHERE Name = 'Cody Winton'
 
 **Note:** Without the `WHERE` clause in the `DELETE` statement, every record in our table will be deleted.
 
-**Previous:** [Introduction](introduction.markdown) |
+**Previous:** [System Setup](system.markdown) |
 **Next:** [Modifiers](modifiers.markdown)
