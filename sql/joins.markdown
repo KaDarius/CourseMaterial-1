@@ -126,7 +126,26 @@ WHERE Orders.CustomerID IS NULL;
 
 ## RIGHT EXCLUDING JOIN
 
+The `RIGHT EXCLUDING JOIN` statement in SQL gets all the records from the right table where a match does not occur on the left table. The result set looks like this:
+
 ![SQL RIGHT EXCLUDING JOIN](../assets/sql-right-excluding-join.png "SQL RIGHT EXCLUDING JOIN")
+
+The `RIGHT EXCLUDING JOIN` statement follows this syntax:
+
+```sql
+SELECT column_name(s)
+FROM tableA
+RIGHT JOIN tableB ON tableA.column_name = tableB.column_name
+WHERE tableA.column_name IS NULL;
+
+-- Returns all customer names if the Orders.CustomerID is Null
+SELECT Customers.CustomerName
+FROM Orders
+RIGHT JOIN Customers ON Customers.CustomerID = Orders.CustomerID
+WHERE Orders.CustomerID IS NULL;
+```
+
+**Note:** Although Right Excluding Join is available to you, industry standard/best practice is to use a Left Excluding Join instead.
 
 ## FULL OUTER EXCLUDING JOIN
 
