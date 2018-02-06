@@ -1,13 +1,15 @@
 # SQL System Setup
 
-* [MySQL Workbench](#mysql-workbench)
+* [Tools](#tools)
 * [SQL Material](#sql-material)
 
 During this SQL introduction, you'll be using a few different tools:
 
-## MySQL Workbench
+## Tools
 
-Let's download and install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/).
+* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+* [Microsoft SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+* [Microsoft SQL Server Report Builder](https://www.microsoft.com/en-us/download/details.aspx?id=53613)
 
 ## SQL Material
 
