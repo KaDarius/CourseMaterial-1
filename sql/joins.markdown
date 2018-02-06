@@ -29,8 +29,11 @@ SELECT column_name(s)
 FROM tableA
 INNER JOIN tableB ON tableA.column_name = tableB.column_name;
 
--- Returns only records where the Orders.CustomerID matches the Customers.CustomerID
-SELECT Orders.OrderID, Customers.CustomerName FROM Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+-- Returns customer names and order IDs
+-- only where the Orders.CustomerID matches the Customers.CustomerID
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
 ```
 
 ## LEFT JOIN
@@ -46,8 +49,8 @@ SELECT column_name(s)
 FROM tableA
 LEFT JOIN tableB ON tableA.column_name = tableB.column_name;
 
--- Returns all customers and includes the order ID record
--- where the Orders.CustomerID matches the Customers.CustomerID
+-- Returns all customer names and includes the order ID record
+-- if the Orders.CustomerID matches the Customers.CustomerID
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
@@ -67,8 +70,8 @@ SELECT column_name(s)
 FROM tableA
 RIGHT JOIN tableB ON tableA.column_name = tableB.column_name;
 
--- Returns all customers and includes the order ID record
--- where the Orders.CustomerID matches the Customers.CustomerID
+-- Returns all customer names and includes the order ID record
+-- if the Orders.CustomerID matches the Customers.CustomerID
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Orders
 RIGHT JOIN Customers ON Customers.CustomerID = Orders.CustomerID
@@ -79,11 +82,47 @@ ORDER BY Customers.CustomerName;
 
 ## FULL OUTER JOIN
 
+The `FULL OUTER JOIN` statement in SQL gets all the records from both the left and right tables where a match occurs in either table. The result set looks like this:
+
 ![SQL FULL OUTER JOIN](../assets/sql-full-outer-join.png "SQL FULL OUTER JOIN")
+
+The `FULL OUTER JOIN` statement follows this syntax:
+
+```sql
+SELECT column_name(s)
+FROM tableA
+FULL OUTER JOIN tableB ON tableA.column_name = tableB.column_name;
+
+-- Returns all customer names and order ID record
+-- where the Orders.CustomerID matches the Customers.CustomerID
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName;
+```
+
+**Note:** Although Full Outer Join is available to you, there are very few cases where this Join will be required.
 
 ## LEFT EXCLUDING JOIN
 
+The `LEFT EXCLUDING JOIN` statement in SQL gets all the records from the left table where a match does not occur on the right table. The result set looks like this:
+
 ![SQL LEFT EXCLUDING JOIN](../assets/sql-left-excluding-join.png "SQL LEFT EXCLUDING JOIN")
+
+The `LEFT EXCLUDING JOIN` statement follows this syntax:
+
+```sql
+SELECT column_name(s)
+FROM tableA
+LEFT JOIN tableB ON tableA.column_name = tableB.column_name
+WHERE tableB.column_name IS NULL;
+
+-- Returns all customer names if the Orders.CustomerID is Null
+SELECT Customers.CustomerName
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+WHERE Orders.CustomerID IS NULL;
+```
 
 ## RIGHT EXCLUDING JOIN
 
