@@ -26,5 +26,4 @@ In most cases, a `SELECT` statement will be returning many records, while an `IN
 
 In general, it's a no brainer to trade a few milliseconds on the write of an individual record for a read of your reports and other queries to be lightning fast.
 
-**Previous:** [Joins](joins.markdown) |
-**Next:** [Microsoft SQL Reporting](reporting.markdown)
+**Previous:** [Joins](joins.markdown)

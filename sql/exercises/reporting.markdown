@@ -26,5 +26,3 @@ While the `Id` column is selected, go to the bottom of the screen and find the "
 
 * Is Identity: `Yes`
 * Identity Increment: `1`
-
-**Previous:** [Performance](performance.markdown)

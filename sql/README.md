@@ -94,8 +94,8 @@ Awesome, let's get your [System Setup](system.markdown) and move onto our materi
 * [Injection](injection.markdown)
 * [Joins](joins.markdown)
 * [Performance](performance.markdown)
-* [Reporting](reporting.markdown)
 
 ## Exercises
 
+* [Microsoft SQL Reporting](exercises/reporting.markdown)
 * [SqlIntro](https://github.com/truecodersio/SqlIntro)
