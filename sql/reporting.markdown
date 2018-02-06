@@ -1,4 +1,4 @@
-# SQL Reporting
+# Microsoft SQL Reporting
 
 * [Table Creation](#table-creation)
 * [Column Creation](#column-creation)
@@ -22,4 +22,9 @@ Now that we've got our table, let's setup our schema:
 * Mark it a `Primary Key` by right clicking to the left of `Id`. You should now see a key icon beside it.
 * Make sure the `Allows Nulls` checkbox is left unchecked
 
-**Previous:** [Joins](joins.markdown)
+While the `Id` column is selected, go to the bottom of the screen and find the "Identity Specification" option and update:
+
+* Is Identity: `Yes`
+* Identity Increment: `1`
+
+**Previous:** [Performance](performance.markdown)
