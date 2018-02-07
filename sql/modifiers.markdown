@@ -6,21 +6,27 @@
 * [ORDER BY](#order-by)
 * [IS NULL, IS NOT NULL](#is-null-is-not-null)
 * [SELECT DISTINCT](#select-distinct)
+* [LIKE](#like)
+* [COUNT, SUM, AVG](#count-sum-avg)
 
 ANSI SQL provides additional statement keywords that can be used in tandem with the four CRUD statements to modify the results.
 
 ## Operators
 
-In ANSI SQL, there are several operators that are used:
+In SQL, there are several operators that are used:
 
-| Operator  | Definition                                                                    |
-| --------- | ----------------------------------------------------------------------------- |
-| `=`       | Equal                                                                         |
-| `<>`      | Not equal. Note: In some versions of SQL this operator may be written as `!=` |
-| `>`       | Greater than                                                                  |
-| `<`       | Less than                                                                     |
-| `>=`      | Greater than or equal                                                         |
-| `<=`      | Less than or equal                                                            |
+| Operator     | Definition                                                 |
+| ------------ | ---------------------------------------------------------- |
+| `=`          | Equal                                                      |
+| `<>` or `!=` | Not equal                                                  |
+| `>`          | Greater than                                               |
+| `<`          | Less than                                                  |
+| `>=`         | Greater than or equal                                      |
+| `<=`         | Less than or equal                                         |
+| `%`          | Wildcard that represents zero, one, or multiple characters |
+| `_` or `?`   | Wildcard that represents a single character                |
+
+**Note:** Choose the operator wisely based on the SQL implementation you're using.
 
 ## WHERE
 
@@ -108,6 +114,66 @@ FROM table_name;
 
 -- Select the records that have a different Country value from the Customers table
 SELECT DISTINCT Country FROM Customers;
+```
+
+## LIKE
+
+The `LIKE` statement is used in a WHERE clause to search for a specified pattern in a column:
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+
+-- Select the records where the customer's name starts with "a"
+SELECT * FROM Customers WHERE CustomerName LIKE 'a%';
+```
+
+Here are some examples showing different LIKE operators with '%' and '_' wildcards:
+
+| LIKE Operator                     | Definition                                                              |
+| --------------------------------- | ----------------------------------------------------------------------- |
+| `WHERE CustomerName LIKE 'a%'`    | Any values that starts with "a"                                         |
+| `WHERE CustomerName LIKE '%a'`    | Any values that ends with "a"                                           |
+| `WHERE CustomerName LIKE '%a%'`   | Any values that have "a" in any position                                |
+| `WHERE CustomerName LIKE '_a%'`   | Any values that have "a" in the second position                         |
+| `WHERE CustomerName LIKE 'a_%_%'` | Any values that starts with "a" and are at least 3 characters in length |
+| `WHERE ContactName LIKE 'a%e'`    | Any values that starts with "a" and ends with "e"                       |
+
+
+## COUNT, SUM, AVG
+
+The `COUNT` operator will return the count of records based on the query:
+
+```sql
+SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+
+-- Count all the products
+SELECT COUNT(ProductID) FROM Products;
+```
+
+The `SUM` operator will return the sum of values in records based on the query:
+
+```sql
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+
+-- Sum all the quantities available in order details
+SELECT SUM(Quantity) FROM OrderDetails;
+```
+
+The `AVG` operator will return the average of values in records based on the query:
+
+```sql
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+
+-- Average all the prices available in products
+SELECT AVG(Price) FROM Products;
 ```
 
 **Previous:** [Statements](statements.markdown) |
