@@ -8,6 +8,7 @@
 * [SELECT DISTINCT](#select-distinct)
 * [LIKE](#like)
 * [COUNT, SUM, AVG](#count-sum-avg)
+* [Aliases](#aliases)
 
 ANSI SQL provides additional statement keywords that can be used in tandem with the four CRUD statements to modify the results.
 
@@ -140,7 +141,6 @@ Here are some examples showing different LIKE operators with '%' and '_' wildcar
 | `WHERE CustomerName LIKE 'a_%_%'` | Any values that starts with "a" and are at least 3 characters in length |
 | `WHERE ContactName LIKE 'a%e'`    | Any values that starts with "a" and ends with "e"                       |
 
-
 ## COUNT, SUM, AVG
 
 The `COUNT` operator will return the count of records based on the query:
@@ -174,6 +174,33 @@ WHERE condition;
 
 -- Average all the prices available in products
 SELECT AVG(Price) FROM Products;
+```
+
+## Aliases
+
+In SQL, you can use an alias to give your table or column a temporary name. An alias only exists for the duration of the query.
+
+Column aliases are often used to make columns more clear, concise, and readable in the return:
+
+```sql
+-- Column alias syntax
+SELECT column_name AS alias_name
+FROM table_name;
+
+SELECT CustomerID as ID, CustomerName AS Customer
+FROM Customers;
+```
+
+Table aliases are often used to make queries more clear, concise, and readable in the statement:
+
+```sql
+-- Table alias syntax
+SELECT column_name(s)
+FROM table_name AS alias_name;
+
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName = "Around the Horn" AND c.CustomerID = o.CustomerID;
 ```
 
 **Previous:** [Statements](statements.markdown) |
