@@ -11,6 +11,8 @@
 * [Aliases](#aliases)
 
 ANSI SQL provides additional statement keywords that can be used in tandem with the four CRUD statements to modify the results.
+We've included several below, but there are a ton of other modifiers available in ANSI SQL.
+Check it out on [W3 Schools](https://www.w3schools.com/sql/default.asp).
 
 ## Operators
 
